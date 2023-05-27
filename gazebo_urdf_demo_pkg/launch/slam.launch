@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/spawn_model.launch"/>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/amcl.launch"/>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/gmap.launch"/>
+    <!-- <include file="$(find gazebo_urdf_demo_pkg)/launch/move_base.launch"/> -->
+    <!-- <node pkg="gazebo_urdf_demo_pkg" type="key_vcmd.py" name="vcmd" /> -->
+  
+   
+</launch>

@@ -1,0 +1,29 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find urdf1_pkg)/urdf/urdf1.urdf" />
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find urdf1_pkg)/urdf.rviz" />
+  <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+     <rosparam file="$(find urdf1_pkg)/config/controller.yaml" command="load" />
+     <param name="sim" value="true" />
+  </node>
+  <node name = "car_vel" pkg="urdf1_pkg" type="my_car_cmdvel_node.py"/>
+  <!-- <node name="odometry_publisher" pkg="odometry_publisher_tutorial" type="odometry_publisher" output="screen">
+    <param name="odom_param" value="param_value" />
+  </node> -->
+
+</launch>

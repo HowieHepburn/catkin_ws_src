@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/gazebo_cardemo.launch"/>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/amcl.launch"/>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/move_base.launch"/>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/gmap.launch"/>
+  
+   
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" />
+</launch>

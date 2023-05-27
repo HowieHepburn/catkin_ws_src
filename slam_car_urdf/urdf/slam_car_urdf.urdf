@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="slam_car_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.79451050096713E-17 0 0.0225"
+        rpy="0 0 0" />
+      <mass
+        value="2.51327412287183" />
+      <inertia
+        ixx="0.00762359817271123"
+        ixy="1.07186196898297E-50"
+        ixz="-2.72707632382106E-18"
+        iyy="0.00762359817271123"
+        iyz="-1.94272883206886E-35"
+        izz="0.0125663706143592" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right">
+    <inertial>
+      <origin
+        xyz="-3.60878140608269E-19 6.93889390390723E-18 -0.00749999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0577267650097125" />
+      <inertia
+        ixx="1.87611986281566E-05"
+        ixy="-4.27201574096171E-38"
+        ixz="-1.80534032376123E-23"
+        iyy="1.87611986281566E-05"
+        iyz="6.67041240997494E-22"
+        izz="3.53576435684489E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r"
+    type="continuous">
+    <origin
+      xyz="0 -0.115 0"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left">
+    <inertial>
+      <origin
+        xyz="-2.67972330793522E-19 3.46944695195361E-18 0.00750000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0577267650097125" />
+      <inertia
+        ixx="1.87611986281566E-05"
+        ixy="-1.74700545371199E-21"
+        ixz="8.10839387363186E-24"
+        iyy="1.87611986281565E-05"
+        iyz="6.36832889208227E-22"
+        izz="3.53576435684489E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_driven"
+    type="continuous">
+    <origin
+      xyz="0 0.115 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front">
+    <inertial>
+      <origin
+        xyz="0 -2.3404423700906E-19 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00176714586764426" />
+      <inertia
+        ixx="3.97607820219958E-08"
+        ixy="2.86886809144189E-24"
+        ixz="-3.22897170824252E-24"
+        iyy="3.97607820219958E-08"
+        iyz="-4.24929064425396E-24"
+        izz="3.97607820219958E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/front.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f_driven"
+    type="continuous">
+    <origin
+      xyz="0.07 0 -0.025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="back">
+    <inertial>
+      <origin
+        xyz="0 1.1702211850453E-19 8.67361737988404E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.00176714586764426" />
+      <inertia
+        ixx="3.97607820219958E-08"
+        ixy="2.04657953337569E-24"
+        ixz="-4.90432414504321E-24"
+        iyy="3.97607820219958E-08"
+        iyz="-3.46956680478304E-24"
+        izz="3.97607820219958E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/back.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_driven"
+    type="continuous">
+    <origin
+      xyz="-0.07 0 -0.025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0 -4.12335585688332E-18 0.0125"
+        rpy="0 0 0" />
+      <mass
+        value="0.00625" />
+      <inertia
+        ixx="6.51041666666667E-07"
+        ixy="-5.95728924546422E-24"
+        ixz="1.64948095499974E-22"
+        iyy="3.77604166666667E-07"
+        iyz="4.99809992886639E-23"
+        izz="3.77604166666667E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_fixed"
+    type="fixed">
+    <origin
+      xyz="0.08 0 0.0625"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="laser_support">
+    <inertial>
+      <origin
+        xyz="-4.1413007865299E-17 -5.2907515930031E-19 0.075"
+        rpy="0 0 0" />
+      <mass
+        value="0.0471238898038469" />
+      <inertia
+        ixx="8.9535390627309E-05"
+        ixy="4.96308367531817E-23"
+        ixz="4.80993864318015E-20"
+        iyy="8.9535390627309E-05"
+        iyz="2.8535407990337E-37"
+        izz="2.35619449019235E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/laser_support.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/laser_support.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_sup_fixed"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0625"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_support" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="-1.34362177014971E-17 -2.03864780368065E-18 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.141371669411541" />
+      <inertia
+        ixx="6.12610567450009E-05"
+        ixy="2.76303274868706E-36"
+        ixz="-2.38538838926736E-21"
+        iyy="6.12610567450009E-05"
+        iyz="-5.37308287535703E-22"
+        izz="6.36172512351933E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/laser.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_car_urdf/meshes/laser.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_fixed"
+    type="continuous">
+    <origin
+      xyz="0 0 0.15"
+      rpy="0 0 0" />
+    <parent
+      link="laser_support" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

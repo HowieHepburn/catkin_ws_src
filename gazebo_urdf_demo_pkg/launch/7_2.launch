@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/gazebo_cardemo.launch"/> 
+    <!-- 加载robot_description 并在gazbeo中显示-->
+   
+    <include file="$(find gazebo_urdf_demo_pkg)/launch/guihua.launch"/>
+   
+</launch>

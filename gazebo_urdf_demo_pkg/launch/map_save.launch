@@ -1,0 +1,4 @@
+<launch>
+    <arg name="filename" value="$(find gazebo_urdf_demo_pkg)/map/58_nav" />
+    <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg filename)" />
+</launch>
